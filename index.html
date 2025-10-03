@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Readers Community">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Readers Community - Virtual Book Club</title>
+    <link rel="stylesheet" href="hs.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-book-open"></i>
+                <span>Readers Community</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#recommendations" class="nav-link">Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#events" class="nav-link">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#community" class="nav-link">Community</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Welcome to Your Literary Haven</h1>
+                <p class="hero-subtitle">Join thousands of book lovers in our cozy virtual book club. Discover new worlds, share your thoughts, and connect with fellow readers from around the globe.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('recommendations')">Explore Books</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('community')">Join Community</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-books">
+                    <div class="book book-1"></div>
+                    <div class="book book-2"></div>
+                    <div class="book book-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Book Section -->
+    <section class="featured-book">
+        <div class="container">
+            <h2 class="section-title">Featured Book of the Month</h2>
+            <div class="featured-content">
+                <div class="book-cover">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=400&fit=crop" alt="The Seven Husbands of Evelyn Hugo" class="cover-image">
+                </div>
+                <div class="book-details">
+                    <h3 class="book-title">The Seven Husbands of Evelyn Hugo</h3>
+                    <p class="book-author">by Taylor Jenkins Reid</p>
+                    <p class="book-description">
+                        A captivating story about a reclusive Hollywood icon who finally decides to tell her life story to an unknown journalist. 
+                        This novel weaves together themes of ambition, love, and the price of fame in a way that will keep you turning pages late into the night.
+                    </p>
+                    <div class="book-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">4.8/5</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span>2,847 readers</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-comments"></i>
+                            <span>156 discussions</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Start Reading</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations">
+        <div class="container">
+            <h2 class="section-title">Curated Recommendations</h2>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fiction">Fiction</button>
+                <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
+                <button class="filter-btn" data-filter="mystery">Mystery</button>
+                <button class="filter-btn" data-filter="romance">Romance</button>
+            </div>
+            <div class="books-grid" id="books-grid">
+                <!-- Books will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Community Reviews & Discussions</h2>
+            <div class="reviews-content">
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=60&h=60&fit=crop&crop=face" alt="Sarah Chen">
+                                </div>
+                                <div class="reviewer-details">
+                                    <h4>Sarah Chen</h4>
+                                    <span class="review-date">2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <h5 class="review-book">Project Hail Mary by Andy Weir</h5>
+                        <p class="review-text">Absolutely loved this book! The science fiction elements are brilliantly crafted, and the character development is incredible. I couldn't put it down!</p>
+                        <div class="review-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i> 24</button>
+                            <button class="action-btn"><i class="fas fa-reply"></i> Reply</button>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop&crop=face" alt="Marcus Johnson">
+                                </div>
+                                <div class="reviewer-details">
+                                    <h4>Marcus Johnson</h4>
+                                    <span class="review-date">1 week ago</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">★★★★☆</div>
+                        </div>
+                        <h5 class="review-book">The Midnight Library by Matt Haig</h5>
+                        <p class="review-text">A thought-provoking read that really made me reflect on life choices. The concept is fascinating, though I found some parts a bit slow.</p>
+                        <div class="review-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i> 18</button>
+                            <button class="action-btn"><i class="fas fa-reply"></i> Reply</button>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=60&h=60&fit=crop&crop=face" alt="Elena Rodriguez">
+                                </div>
+                                <div class="reviewer-details">
+                                    <h4>Elena Rodriguez</h4>
+                                    <span class="review-date">3 days ago</span>
+                                </div>
+                            </div>
+                            <div class="review-rating">★★★★★</div>
+                        </div>
+                        <h5 class="review-book">Klara and the Sun by Kazuo Ishiguro</h5>
+                        <p class="review-text">Ishiguro's writing is pure poetry. This book explores AI and humanity in such a beautiful, heartbreaking way. Highly recommend!</p>
+                        <div class="review-actions">
+                            <button class="action-btn"><i class="fas fa-heart"></i> 31</button>
+                            <button class="action-btn"><i class="fas fa-reply"></i> Reply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="discussion-forum">
+                    <h3>Join the Discussion</h3>
+                    <div class="discussion-form">
+                        <textarea placeholder="Share your thoughts about a book..." class="discussion-input"></textarea>
+                        <div class="form-actions">
+                            <select class="book-select">
+                                <option>Select a book...</option>
+                                <option>The Seven Husbands of Evelyn Hugo</option>
+                                <option>Project Hail Mary</option>
+                                <option>The Midnight Library</option>
+                                <option>Klara and the Sun</option>
+                            </select>
+                            <button class="btn btn-primary">Post Review</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card featured">
+                    <div class="event-date">
+                        <span class="month">DEC</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Monthly Book Discussion</h3>
+                        <p class="event-description">Join us for our monthly discussion of "The Seven Husbands of Evelyn Hugo"</p>
+                        <div class="event-details">
+                            <span class="event-time"><i class="fas fa-clock"></i> 7:00 PM EST</span>
+                            <span class="event-type"><i class="fas fa-users"></i> Virtual Meetup</span>
+                        </div>
+                        <button class="btn btn-primary">Join Event</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">DEC</span>
+                        <span class="day">22</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Author Meet & Greet</h3>
+                        <p class="event-description">Exclusive Q&A session with bestselling author Sarah Johnson</p>
+                        <div class="event-details">
+                            <span class="event-time"><i class="fas fa-clock"></i> 6:30 PM EST</span>
+                            <span class="event-type"><i class="fas fa-user"></i> Author Event</span>
+                        </div>
+                        <button class="btn btn-secondary">Register</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">JAN</span>
+                        <span class="day">05</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Silent Reading Session</h3>
+                        <p class="event-description">Cozy reading session with ambient café sounds and optional discussions</p>
+                        <div class="event-details">
+                            <span class="event-time"><i class="fas fa-clock"></i> 2:00 PM EST</span>
+                            <span class="event-type"><i class="fas fa-book"></i> Reading Session</span>
+                        </div>
+                        <button class="btn btn-secondary">Join Session</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2 class="section-title">Our Community</h2>
+            <div class="community-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12,847</h3>
+                        <p>Active Readers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2,456</h3>
+                        <p>Books Discussed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8,923</h3>
+                        <p>Reviews Shared</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>Events Hosted</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="member-profiles">
+                <h3>Featured Community Members</h3>
+                <div class="profiles-grid">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen">
+                        </div>
+                        <h4>Sarah Chen</h4>
+                        <p class="profile-role">Literary Fiction Enthusiast</p>
+                        <div class="profile-stats">
+                            <span>47 reviews</span>
+                            <span>•</span>
+                            <span>Member since 2021</span>
+                        </div>
+                        <p class="profile-bio">"Books are my escape and my reality. I love discussing character development and narrative techniques."</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face" alt="Marcus Johnson">
+                        </div>
+                        <h4>Marcus Johnson</h4>
+                        <p class="profile-role">Sci-Fi & Fantasy Reader</p>
+                        <div class="profile-stats">
+                            <span>32 reviews</span>
+                            <span>•</span>
+                            <span>Member since 2020</span>
+                        </div>
+                        <p class="profile-bio">"I'm always looking for the next mind-bending sci-fi adventure. Let's explore new worlds together!"</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face" alt="Elena Rodriguez">
+                        </div>
+                        <h4>Elena Rodriguez</h4>
+                        <p class="profile-role">Book Club Moderator</p>
+                        <div class="profile-stats">
+                            <span>89 reviews</span>
+                            <span>•</span>
+                            <span>Member since 2019</span>
+                        </div>
+                        <p class="profile-bio">"I love bringing readers together and facilitating meaningful discussions about literature."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>Readers Community</span>
+                    </div>
+                    <p>Connecting book lovers worldwide through shared stories and meaningful discussions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-goodreads"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Join Book Club</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Get weekly book recommendations and event updates.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Readers Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample book data
+        const booksData = [
+            {
+                id: 1,
+                title: "The Seven Husbands of Evelyn Hugo",
+                author: "Taylor Jenkins Reid",
+                category: "fiction",
+                rating: 4.8,
+                image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=200&h=300&fit=crop",
+                description: "A captivating story about a reclusive Hollywood icon."
+            },
+            {
+                id: 2,
+                title: "Project Hail Mary",
+                author: "Andy Weir",
+                category: "fiction",
+                rating: 4.7,
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=300&fit=crop",
+                description: "A thrilling science fiction adventure."
+            },
+            {
+                id: 3,
+                title: "The Midnight Library",
+                author: "Matt Haig",
+                category: "fiction",
+                rating: 4.5,
+                image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=200&h=300&fit=crop",
+                description: "A thought-provoking exploration of life choices."
+            },
+            {
+                id: 4,
+                title: "Klara and the Sun",
+                author: "Kazuo Ishiguro",
+                category: "fiction",
+                rating: 4.6,
+                image: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=200&h=300&fit=crop",
+                description: "A beautiful exploration of AI and humanity."
+            },
+            {
+                id: 5,
+                title: "Atomic Habits",
+                author: "James Clear",
+                category: "non-fiction",
+                rating: 4.9,
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=300&fit=crop",
+                description: "Transform your life with tiny changes."
+            },
+            {
+                id: 6,
+                title: "The Silent Patient",
+                author: "Alex Michaelides",
+                category: "mystery",
+                rating: 4.4,
+                image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200&h=300&fit=crop",
+                description: "A gripping psychological thriller."
+            },
+            {
+                id: 7,
+                title: "The Alchemist",
+                author: "Paulo Coelho",
+                category: "fiction",
+                rating: 4.3,
+                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=200&h=300&fit=crop",
+                description: "A magical journey of self-discovery."
+            },
+            {
+                id: 8,
+                title: "Educated",
+                author: "Tara Westover",
+                category: "non-fiction",
+                rating: 4.7,
+                image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=200&h=300&fit=crop",
+                description: "A powerful memoir about education and family."
+            },
+            {
+                id: 9,
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                category: "fiction",
+                rating: 4.2,
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=300&fit=crop",
+                description: "A classic tale of the American Dream."
+            },
+            {
+                id: 10,
+                title: "Becoming",
+                author: "Michelle Obama",
+                category: "non-fiction",
+                rating: 4.8,
+                image: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=200&h=300&fit=crop",
+                description: "An inspiring memoir of resilience and hope."
+            },
+            {
+                id: 11,
+                title: "The Girl with the Dragon Tattoo",
+                author: "Stieg Larsson",
+                category: "mystery",
+                rating: 4.1,
+                image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=200&h=300&fit=crop",
+                description: "A complex thriller about corruption and justice."
+            },
+            {
+                id: 12,
+                title: "Pride and Prejudice",
+                author: "Jane Austen",
+                category: "romance",
+                rating: 4.6,
+                image: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=200&h=300&fit=crop",
+                description: "A timeless romantic novel about love and society."
+            }
+        ];
+
+        // DOM Elements
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const booksGrid = document.getElementById('books-grid');
+
+        // Mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`#${sectionId}`);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Book filtering functionality
+        function filterBooks(category) {
+            const filteredBooks = category === 'all' 
+                ? booksData 
+                : booksData.filter(book => book.category === category);
+
+            displayBooks(filteredBooks);
+        }
+
+        // Display books in grid
+        function displayBooks(books) {
+            booksGrid.innerHTML = '';
+            
+            books.forEach(book => {
+                const bookCard = document.createElement('div');
+                bookCard.className = 'book-card';
+                bookCard.innerHTML = `
+                    <div class="book-image">
+                        <img src="${book.image}" alt="${book.title}">
+                        <div class="book-overlay">
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h4 class="book-title">${book.title}</h4>
+                        <p class="book-author">by ${book.author}</p>
+                        <p class="book-description">${book.description}</p>
+                    </div>
+                `;
+                booksGrid.appendChild(bookCard);
+            });
+        }
+
+        // Filter button event listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                // Filter books
+                filterBooks(btn.dataset.filter);
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Display all books initially
+            displayBooks(booksData);
+            
+            // Add animation to stats counters
+            const statNumbers = document.querySelectorAll('.stat-card h3');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const finalNumber = target.textContent.replace(/,/g, '');
+                        animateCounter(target, 0, parseInt(finalNumber), 2000);
+                        observer.unobserve(target);
+                    }
+                });
+            }, observerOptions);
+
+            statNumbers.forEach(stat => observer.observe(stat));
+        });
+
+        // Counter animation function
+        function animateCounter(element, start, end, duration) {
+            const startTime = performance.now();
+            const increment = (end - start) / (duration / 16);
+
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(start + (end - start) * progress);
+                
+                element.textContent = current.toLocaleString();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+
+            requestAnimationFrame(updateCounter);
+        }
+
+        // Review form functionality
+        const discussionForm = document.querySelector('.discussion-form');
+        const discussionInput = document.querySelector('.discussion-input');
+        const bookSelect = document.querySelector('.book-select');
+
+        discussionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const reviewText = discussionInput.value.trim();
+            const selectedBook = bookSelect.value;
+
+            if (reviewText && selectedBook !== 'Select a book...') {
+                // Create new review card
+                const newReview = document.createElement('div');
+                newReview.className = 'review-card';
+                newReview.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="You">
+                            </div>
+                            <div class="reviewer-details">
+                                <h4>You</h4>
+                                <span class="review-date">Just now</span>
+                            </div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <h5 class="review-book">${selectedBook}</h5>
+                    <p class="review-text">${reviewText}</p>
+                    <div class="review-actions">
+                        <button class="action-btn"><i class="fas fa-heart"></i> 0</button>
+                        <button class="action-btn"><i class="fas fa-reply"></i> Reply</button>
+                    </div>
+                `;
+
+                // Add to reviews grid
+                const reviewsGrid = document.querySelector('.reviews-grid');
+                reviewsGrid.insertBefore(newReview, reviewsGrid.firstChild);
+
+                // Clear form
+                discussionInput.value = '';
+                bookSelect.value = 'Select a book...';
+
+                // Show success message
+                showNotification('Review posted successfully!', 'success');
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Like functionality for reviews
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.action-btn')) {
+                const btn = e.target.closest('.action-btn');
+                if (btn.querySelector('.fa-heart')) {
+                    const heart = btn.querySelector('.fa-heart');
+                    const count = btn.querySelector('span') || btn.lastChild;
+                    
+                    if (heart.classList.contains('liked')) {
+                        heart.classList.remove('liked');
+                        count.textContent = parseInt(count.textContent) - 1;
+                    } else {
+                        heart.classList.add('liked');
+                        count.textContent = parseInt(count.textContent) + 1;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
